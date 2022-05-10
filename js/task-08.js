@@ -8,7 +8,7 @@ function handleSubmit(event) {
   } = event.currentTarget;
 
   const clientemail = event.currentTarget.elements;
-  console.log(clientemail);
+  // console.log(clientemail);
 
   if (email.value === '' || password.value === '') {
     return alert('All fields must be filled');
