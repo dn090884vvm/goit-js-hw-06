@@ -41,12 +41,17 @@ function createBoxes() {
 }
 
 function removeElements() {
-  const divToRemove = document.getElementsByClassName('addedElements');
-  console.log(divToRemove);
-  console.log(divToRemove.length);
-  for (let i = divToRemove.length - 1; i >= 0; i -= 1) {
-    divToRemove[i].remove();
-  }
+  //OR
+  // const divToRemove = document.getElementsByClassName('addedElements');
+  // console.log(divToRemove);
+  // console.log(divToRemove.length);
+  // for (let i = divToRemove.length - 1; i >= 0; i -= 1) {
+  //   divToRemove[i].remove();
+  // }
+
+  elementToAdd.innerHTML = '';
+
+  //DOESN"T WORK
   // const divToRemove = Array.prototype.slice.call(
   //   document.getElementsByClassName('addedElements'),
   //   0
