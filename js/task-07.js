@@ -8,7 +8,9 @@ const textToChange = document.querySelector('#text');
 
 function changeTextSize(event) {
   //console.log(rangeEl.value);
-  textToChange.style.fontSize = `${rangeEl.value}px`;
+  //console.log(event.currentTarget.value);
+  textToChange.style.fontSize = `${event.currentTarget.value}px`;
+  // textToChange.style.fontSize = `${rangeEl.value}px`;
 }
 
 rangeEl.addEventListener('input', changeTextSize);
