@@ -12,3 +12,30 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryEl = document.querySelector('.gallery');
+const parentClass = galleryEl.getAttribute('class');
+//console.log(parentClass);
+
+const markup = imagesListDatas => {
+  return imagesListDatas
+    .map(element => {
+      const listEl = `<li class="${parentClass}-item"><img class = "${parentClass}-img" src="${element.url}" alt="${element.alt}"></li>`;
+      return listEl;
+    })
+    .join('');
+};
+
+const imagesDatas = markup(images);
+console.log(imagesDatas);
+galleryEl.insertAdjacentHTML('afterbegin', imagesDatas);
+
+///////!!!!! other solution
+// const markup = images
+//   .map(
+//     element =>
+//       `<li class="gallery-item"><img class = "gallery-img"src="${element.url}" alt="${element.alt}"></li>`
+//   )
+//   .join('');
+
+// galleryEl.insertAdjacentHTML('afterbegin', markup);
