@@ -46,3 +46,12 @@ button {
   width: 100%;
   object-fit: cover;
 }
+
+.addedElements {
+  display: inline-flex;
+  /* background-color: tomato; */
+  border-radius: 10px;
+  /* border-width: 5px;
+  border-color: black; */
+  border: 5px solid black;
+}
