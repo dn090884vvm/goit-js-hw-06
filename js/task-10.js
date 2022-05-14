@@ -14,11 +14,26 @@ const elementToAdd = document.querySelector('#boxes');
 
 const minAmountOfElements = Number(valueOfElements.getAttribute('min'));
 const maxAmountOfElements = Number(valueOfElements.getAttribute('max'));
+let a = 0;
+
+function accum() {
+  // console.log(valueOfElements.value);
+  a = a + Number(valueOfElements.value);
+  console.log(a);
+  return a;
+}
 
 function createBoxes() {
   const arr = [];
-  let width = 30;
-  let height = 30;
+  let width;
+  let height;
+  if (a === 0) {
+    width = 30;
+    height = 30;
+  } else {
+    width = 30 + a * 10;
+    height = 30 + a * 10;
+  }
   if (valueOfElements.value < 1 || valueOfElements.value > 100 || valueOfElements.value === NaN) {
     console.log('Check entered value');
   } else
@@ -37,7 +52,9 @@ function createBoxes() {
       // console.log(elementColor);
       // console.log(arr);
     }
-  return elementToAdd.append(...arr);
+
+  elementToAdd.append(...arr);
+  accum();
 }
 
 function removeElements() {
@@ -50,6 +67,7 @@ function removeElements() {
   // }
 
   elementToAdd.innerHTML = '';
+  a = 0;
 
   //DOESN"T WORK
   // const divToRemove = Array.prototype.slice.call(
